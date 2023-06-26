@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
+const port = process.env.PORT || 5000;
 
 const app = express();
 app.use(cors());
@@ -139,9 +140,6 @@ app.delete('/postcards/:id', (req, res) => {
   });
 });
 
-
-
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
