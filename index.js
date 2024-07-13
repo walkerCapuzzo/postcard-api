@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
-const port = 5000 || process.env.PORT;
+const port = 4000 || process.env.PORT;
 
 const app = express();
 app.use(cors());
@@ -37,7 +37,7 @@ app.get('/postcards/:id', (req, res) => {
     const postcard = postcards.find((post) => post.id === postId);
 
     if (!postcard) {
-      return res.status(404).json({ error: 'Postcard not found.' });
+      return res.status(404).json({ error: 'Postcard não encontrado.' });
     }
 
     res.json(postcard);
